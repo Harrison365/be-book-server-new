@@ -88,5 +88,17 @@
     "bookTitle": "The Da Vinci Code",
     "authorId": 1,
     "isFiction": true
+  },
+  {
+    "bookTitle": "Alex's Burn Books",
+    "authorId": 3,
+    "isFiction": true,
+    "bookId": 16
+  },
+  {
+    "bookTitle": "Alex's Burn Book 2",
+    "authorId": 3,
+    "isFiction": true,
+    "bookId": 17
   }
 ]
