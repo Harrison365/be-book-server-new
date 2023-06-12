@@ -82,7 +82,9 @@ const server = http.createServer((request, response) => {
   }
   //TASK 6
   if (method === "GET" && /\/api\/books\/\d+\/author$/.test(url)) {
-    console.log("task 6");
+    //find book wih that id using read file
+    //then use the author name to read author file toget their data
+    //write this response.
   }
 });
 
