@@ -80,11 +80,31 @@ const server = http.createServer((request, response) => {
         });
     });
   }
+
   //TASK 6
   if (method === "GET" && /\/api\/books\/\d+\/author$/.test(url)) {
-    //find book wih that id using read file
-    //then use the author name to read author file toget their data
-    //write this response.
+    const bookDigit = url.split("/")[3];
+    let authorId;
+    fs.readFile("./data/books.json", "utf8")
+      .then((books) => {
+        const booksJS = JSON.parse(books);
+        const filteredBooks = booksJS.filter((book) => {
+          return book.bookId === +bookDigit;
+        });
+        authorId = filteredBooks[0].authorId;
+        return fs.readFile("./data/authors.json", "utf8");
+      })
+      .then((authors) => {
+        const parsedAuthor = JSON.parse(authors);
+        const filteredAuthors = parsedAuthor.filter((author) => {
+          return author.authorId === authorId;
+        });
+        const authorResponse = { author: filteredAuthors[0] };
+        response.setHeader("Content-Type", "application/json");
+        response.statusCode = 200;
+        response.write(JSON.stringify(authorResponse));
+        response.end();
+      });
   }
 });
 
