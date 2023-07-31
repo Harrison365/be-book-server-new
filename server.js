@@ -48,7 +48,17 @@ const server = http.createServer((request, response) => {
       response.end();
     });
   }
+
   //TASK 5
+  // Request body is in JSON format
+  /* {
+  	"bookTitle": "title",
+  	"authorId": 3,
+  	"isFiction": true,
+  	"bookId": 17
+  }
+  */
+
   if (method === "POST" && url === "/api/books") {
     let body = "";
     request.on("data", (packet) => {
