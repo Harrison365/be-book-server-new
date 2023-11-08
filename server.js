@@ -116,6 +116,13 @@ const server = http.createServer((request, response) => {
         response.end();
       });
   }
+
+  //TASK 8 same as
+  //   if (/^\/api\/books\?fiction=(true|false)$/.test(url)) {
+  //     console.log("yup");
+  //   } else {
+  //     console.log("nope");
+  //   }
 });
 
 server.listen(8080, (err) => {
