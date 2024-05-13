@@ -100,5 +100,17 @@
     "authorId": 3,
     "isFiction": true,
     "bookId": 17
+  },
+  {
+    "bookTitle": "The Hitchhiker's Guide to the Galaxy",
+    "authorId": 3,
+    "isFiction": true,
+    "bookId": 18
+  },
+  {
+    "bookTitle": "The Hitchhiker's Guide to the Galaxy II",
+    "authorId": 3,
+    "isFiction": true,
+    "bookId": 19
   }
 ]
